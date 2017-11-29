@@ -41,6 +41,7 @@ module.exports = function(
     build: 'react-scripts build',
     test: 'react-scripts test --env=jsdom',
     eject: 'react-scripts eject',
+    prepare: 'npm link bs-platform',
   };
 
   fs.writeFileSync(
@@ -98,7 +99,9 @@ module.exports = function(
     args = argsExtra = ['add'];
   } else {
     command = 'npm';
-    args = argsExtra = ['install', '--save', verbose && '--verbose'].filter(e => e);
+    args = argsExtra = ['install', '--save', verbose && '--verbose'].filter(
+      e => e
+    );
   }
   args.push('react', 'react-dom');
 
